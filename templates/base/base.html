@@ -1,0 +1,173 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cooking coach</title>
+    <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+    <link rel="icon" href="{% static  "images/favicon.png" %}">
+    <link rel="shortcut icon" href="{% static  "images/favicon.png" %}">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" href="{% static "css/slider.css" %}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="{% static "js/jquery.js" %}"></script>
+    <script src="{% static "js/jquery-migrate-1.1.1.js" %}"></script>
+    <script src="{% static "js/superfish.js" %}"></script>
+    <script src="{% static "js/jquery.easing.1.3.js" %}"></script>
+    <script src="{% static "js/sForm.js" %}"></script>
+    <script src="{% static "js/jquery.carouFredSel-6.1.0-packed.js" %}"></script>
+    <script src="{% static "js/tms-0.4.1.js" %}"></script>
+    <script>
+        $(window).load(function () {
+            $('.slider')._TMS({
+                show: 0,
+                pauseOnHover: false,
+                prevBu: '.prev',
+                nextBu: '.next',
+                playBu: false,
+                duration: 800,
+                preset: 'fade',
+                pagination: true, //'.pagination',true,'<ul></ul>'
+                pagNums: false,
+                slideshow: 8000,
+                numStatus: false,
+                banners: false,
+                waitBannerAnimation: false,
+                progressBar: false
+            })
+        });
+        $(window).load(function () {
+            $('.carousel1').carouFredSel({
+                auto: false,
+                prev: '.prev',
+                next: '.next',
+                width: 960,
+                items: {
+                    visible: {
+                        min: 1,
+                        max: 4
+                    },
+                    height: 'auto',
+                    width: 240,
+                },
+                responsive: false,
+                scroll: 1,
+                mousewheel: false,
+                swipe: {
+                    onMouse: false,
+                    onTouch: false
+                }
+            });
+        });
+    </script>
+    <!--[if lt IE 9]>
+<script src="{% static "js/html5shiv.js"%}"></script>
+<link rel="stylesheet" media="screen" href="{% static "css/ie.css"%}">
+<![endif]-->
+</head>
+<body>
+<div class="main">
+    <header>
+        <div class="container_12">
+            <div class="grid_12">
+                <h1><a href="{% url 'index' %}"><img src="{% static "images/logo.png" %}" alt=""></a></h1>
+                <div class="menu_block">
+                    <nav>
+                        <ul class="sf-menu">
+                            <li class="current"><a href="{% url 'index' %}">Home</a></li>
+                            <li><a href="contacts.html">Contacts</a></li>
+                            <li class="with_ul"><a href="about-us.html">Recipe</a>
+                                <ul>
+                                    <li><a href="#">Pork</a></li>
+                                    <li><a href="#">Chicken</a></li>
+                                    <li><a href="#">Beef</a></li>
+                                    <li><a href="#">Vegetarian</a></li>
+                                    <li><a href="#">Vegan</a></li>
+                                </ul>
+                            </li>
+                            <li class="with_ul"><a href="about-us.html">Cocktail</a>
+                                <ul>
+                                    <li><a href="#">Vodka</a></li>
+                                    <li><a href="#">Whiskey</a></li>
+                                    <li><a href="#">Gin</a></li>
+                                    <li><a href="#">Rum</a></li>
+                                    <li><a href="#">Non-alcoholic</a></li>
+                                </ul>
+                            </li>
+                            {#                            <li class="with_ul"><a href="about-us.html">Add Recipe</a>#}
+                            {#                                <ul>#}
+                            {#                                    <li><a href="#">Pork</a></li>#}
+                            {#                                    <li><a href="#">Chicken</a></li>#}
+                            {#                                    <li><a href="#">Beef</a></li>#}
+                            {#                                    <li><a href="#">Vegetarian</a></li>#}
+                            {#                                    <li><a href="#">Vegan</a></li>#}
+                            {#                                </ul>#}
+                            {#                            </li>#}
+                            {##}
+                            {#                            <li class="with_ul"><a href="about-us.html">Add Cocktail</a>#}
+                            {#                                <ul>#}
+                            {#                                    <li><a href="#">Vodka</a></li>#}
+                            {#                                    <li><a href="#">Whiskey</a></li>#}
+                            {#                                    <li><a href="#">Gin</a></li>#}
+                            {#                                    <li><a href="#">Rum</a></li>#}
+                            {#                                    <li><a href="#">Non-alcoholic</a></li>#}
+                            {#                                </ul>#}
+                            {#                            </li>#}
+                            <li><a href="{% url 'sign up' %}">Sign Up</a></li>
+                            <li><a href="{% url 'sign in' %}">Sign In</a></li>
+                            <li><a href="{% url 'sign out' %}">Sign Out</a></li>
+                            {#                            <li><a href="{% url 'user create' %}">Sign Up</a></li>#}
+                        </ul>
+                    </nav>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </header>
+    <strong>Has email: {{ has_email }}</strong>
+<ul>
+    {% for user in object_list %}
+        <li>
+            {% if user == request.user %}
+                <strong>
+                    {{ user.email }}
+                </strong>
+            {% else %}
+                {{ user.email }}
+            {% endif %}
+
+        </li>
+    {% endfor %}
+</ul>
+    {% block page_content %}
+    {% endblock %}
+
+    <div class="bottom_block">
+    </div>
+</div>
+
+<footer>
+    <div class="container_12">
+        <h4>Follow Us</h4>
+        <div class="w3-xlarge w3-padding-32">
+            <a href="https://www.facebook.com/groups/873549316979332"><i
+                    class="fa fa-facebook-official w3-hover-opacity"></i></a>
+            <a href=https://www.instagram.com/_cooking_coach_/><i class="fa fa-instagram w3-hover-opacity"></i></a>
+            <a href=https://twitter.com/_cooking_coach_/><i class="fa fa-twitter w3-hover-opacity"></i></a>
+
+
+            {#            <i class="fa fa-pinterest-p w3-hover-opacity"></i>#}
+            {#            <a href="http://www.templatemonster.com/"><i class="fa fa-linkedin w3-hover-opacity"></i></a>#}
+        </div>
+        <div class="grid_12"> Cooking coach &copy; 2022 | <a href="#">Privacy Policy</a> | Design for:
+            <a href="{% url 'index' %}">CookingCoach.com</a></div>
+        <div class="clear"></div>
+    </div>
+</footer>
+</body>
+</html>
